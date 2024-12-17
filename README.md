@@ -1,4 +1,4 @@
-# Lunify
+# Lunify 🌙
 A CLI to-do list
 
 ---
