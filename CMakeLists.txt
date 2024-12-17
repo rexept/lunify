@@ -13,6 +13,14 @@ add_executable(lunify ${SOURCES})
 target_include_directories(lunify PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_compile_features(lunify PUBLIC cxx_std_23)
 
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    message(STATUS "Building in Release mode")
+    set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -Wall")
+elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "Building in Debug mode")
+    set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall")
+endif()
+
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 23)
 
