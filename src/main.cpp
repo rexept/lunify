@@ -13,7 +13,7 @@ namespace fs = std::filesystem;
 int main(int argc, char** argv) {
     int         EXIT_STATUS = EXIT_SUCCESS;
 
-    CLI::App    app{"A CLI to-do list"};
+    CLI::App    app{"A simple CLI to-do list"};
 
     std::string c_XDG_CONFIG_HOME;
 
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
     todo.loadFromFile(TODO_DB_PATH);
 
     auto addTask = [&todo](std::string task) { todo.addTask(task); };
-    app.add_option("-a,--add", "Add a new task")->each(addTask);
+    app.add_option("-a,--add", "Add a new task")->option_text("TASK")->each(addTask);
 
     auto completeTask = [&todo, &EXIT_STATUS](std::string index) {
         std::stringstream sstream(index);
@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
         todo.completeTask(result - 1);
         return EXIT_STATUS;
     };
-    app.add_option("-c,--complete", "Mark task as completed")->each(completeTask);
+    app.add_option("-c,--complete", "Mark task as completed")->option_text("INDEX")->each(completeTask);
 
     auto deleteTask = [&todo, &EXIT_STATUS](std::string index) {
         std::stringstream sstream(index);
@@ -64,7 +64,7 @@ int main(int argc, char** argv) {
         todo.deleteTask(result - 1);
         return EXIT_STATUS;
     };
-    app.add_option("-d,--delete", "Delete a task")->each(deleteTask);
+    app.add_option("-d,--delete", "Delete a task")->option_text("INDEX")->each(deleteTask);
 
     auto listTasks = [&todo](int nothing) { todo.listTasks(); };
     app.add_flag("-l,--list", listTasks, "List all tasks");
