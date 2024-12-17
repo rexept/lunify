@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
             EXIT_STATUS = EXIT_FAILURE;
             return EXIT_STATUS;
         }
-        todo.completeTask(result);
+        todo.completeTask(result - 1);
         return EXIT_STATUS;
     };
     app.add_option("-c,--complete", "Mark task as completed")->each(completeTask);
@@ -61,7 +61,7 @@ int main(int argc, char** argv) {
             EXIT_STATUS = EXIT_FAILURE;
             return EXIT_STATUS;
         }
-        todo.deleteTask(result);
+        todo.deleteTask(result - 1);
         return EXIT_STATUS;
     };
     app.add_option("-d,--delete", "Delete a task")->each(deleteTask);

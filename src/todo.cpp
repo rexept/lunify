@@ -7,7 +7,7 @@ void Todo::addTask(const std::string& description) {
 
 void Todo::completeTask(size_t index) {
     if (index < tasks.size()) {
-        tasks[index + 1].completed = true;
+        tasks[index].completed = true;
     }
 }
 
