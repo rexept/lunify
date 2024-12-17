@@ -7,7 +7,7 @@ void Todo::addTask(const std::string& description) {
 
 void Todo::completeTask(size_t index) {
     if (index < tasks.size()) {
-        tasks[index].completed = true;
+        tasks[index + 1].completed = true;
     }
 }
 
@@ -23,7 +23,7 @@ void Todo::listTasks() const {
         return;
     }
     for (size_t i = 0; i < tasks.size(); i++) {
-        std::print("{}{}\n", (tasks[i].completed ? "[x] " : "[ ] "), tasks[i].description);
+        std::print("{}: {}{}\n", i + 1, (tasks[i].completed ? "[x] " : "[ ] "), tasks[i].description);
     }
 }
 
@@ -36,7 +36,7 @@ void Todo::saveToFile(const std::string& filename) {
     file << json.dump(4);
 }
 
-Todo::Todo(const std::string& filename) {
+void Todo::loadFromFile(std::string filename) {
     std::ifstream file(filename);
     if (file) {
         nlohmann::json json;
