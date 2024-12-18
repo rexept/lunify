@@ -11,6 +11,12 @@ void Todo::completeTask(size_t index) {
     }
 }
 
+void Todo::revokeCompletion(size_t index) {
+    if (index < tasks.size()) {
+        tasks[index].completed = false;
+    }
+}
+
 void Todo::deleteTask(size_t index) {
     if (index < tasks.size()) {
         tasks.erase(tasks.begin() + index);
