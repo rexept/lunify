@@ -3,8 +3,8 @@ A simple CLI to-do list application for Linux.
 
 Quickly manage your tasks from the terminal!
 
-![Help Page](./screenshots/help_page_screenshot_enhanced.png)
-![List Tasks](./screenshots/list_tasks_screenshot_betterenhanced.png)
+![Help Page](./screenshots/help_termshot.png)
+![List Tasks](./screenshots/list_termshot.png)
 
 ---
 
@@ -53,3 +53,6 @@ Initialize CMake
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .. 
 ```
+
+
+Special thanks to [termshot](https://github.com/homeport/termshot) for the amazing screenshots
