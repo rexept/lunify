@@ -13,7 +13,7 @@ class Todo {
         bool        completed = false;
     };
 
-    void loadFromFile(std::string filename);
+    void loadFromFile(const std::string& filename);
 
     void addTask(const std::string& description);
     void completeTask(size_t index);

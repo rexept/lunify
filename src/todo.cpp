@@ -42,7 +42,7 @@ void Todo::saveToFile(const std::string& filename) {
     file << json.dump(4);
 }
 
-void Todo::loadFromFile(std::string filename) {
+void Todo::loadFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (file) {
         nlohmann::json json;
