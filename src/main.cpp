@@ -84,6 +84,9 @@ int main(int argc, char** argv) {
     auto listTasks = [&todo](int nothing) { todo.listTasks(); };
     app.add_flag("-l,--list", listTasks, "List all tasks");
 
+    auto clearTasks = [&todo](int nothing) { todo.clearTasks(); };
+    app.add_flag("--clear", clearTasks, "Clear all tasks");
+
     auto displayVersion = [](int nothing) { std::println("{}", VERSION); };
     app.add_flag("-v,--version", displayVersion, "Display the current version of Lunify");
 
