@@ -5,19 +5,19 @@ void Todo::addTask(const std::string& description) {
     tasks.push_back({description, false});
 }
 
-void Todo::completeTask(size_t index) {
+void Todo::completeTask(const size_t index) {
     if (index < tasks.size()) {
         tasks[index].completed = true;
     }
 }
 
-void Todo::revokeCompletion(size_t index) {
+void Todo::revokeCompletion(const size_t index) {
     if (index < tasks.size()) {
         tasks[index].completed = false;
     }
 }
 
-void Todo::deleteTask(size_t index) {
+void Todo::deleteTask(const size_t index) {
     if (index < tasks.size()) {
         tasks.erase(tasks.begin() + index);
     }

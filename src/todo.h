@@ -16,9 +16,9 @@ class Todo {
     void loadFromFile(const std::string& filename);
 
     void addTask(const std::string& description);
-    void completeTask(size_t index);
-    void revokeCompletion(size_t index);
-    void deleteTask(size_t index);
+    void completeTask(const size_t index);
+    void revokeCompletion(const size_t index);
+    void deleteTask(const size_t index);
     void listTasks() const;
     void saveToFile(const std::string& filename);
 
