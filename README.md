@@ -17,7 +17,7 @@ sudo mv lunify /usr/local/bin
 ```
 **Note**: You don't have to move it to /usr/local/bin (although it's recommended), just a valid exported path.
 ## Build locally
-**DISCLAIMER**: Make sure you have the [nholman/json](https://github.com/nlohmann/json) library installed on your system.
+**DISCLAIMER**: Make sure you have the [nholmann/json](https://github.com/nlohmann/json) library installed on your system.
 Clone the repo:
 ```bash
 git clone https://github.com/rexept/lunify
