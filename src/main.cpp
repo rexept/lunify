@@ -6,7 +6,7 @@
 #include <filesystem>
 #include "todo.h"
 
-#define VERSION "v1.0.0"
+#define VERSION "v1.1.0"
 
 namespace fs = std::filesystem;
 
@@ -54,6 +54,19 @@ int main(int argc, char** argv) {
         return EXIT_STATUS;
     };
     app.add_option("-c,--complete", "Mark task as completed")->option_text("INDEX")->each(completeTask);
+
+    auto revokeTask = [&todo, &EXIT_STATUS](std::string index) {
+        std::stringstream sstream(index);
+        size_t            result;
+        if (!(sstream >> result)) {
+            std::cerr << "Invalid type, please provide a numbered index" << std::endl;
+            EXIT_STATUS = EXIT_FAILURE;
+            return EXIT_STATUS;
+        }
+        todo.revokeCompletion(result - 1);
+        return EXIT_STATUS;
+    };
+    app.add_option("-R,--revoke", "Revoke a completion from a task")->option_text("INDEX")->each(revokeTask);
 
     auto deleteTask = [&todo, &EXIT_STATUS](std::string index) {
         std::stringstream sstream(index);
