@@ -6,6 +6,8 @@
 #include <filesystem>
 #include "todo.h"
 
+#define VERSION "v1.0.0"
+
 namespace fs = std::filesystem;
 
 #define XDG_CONFIG_HOME "XDG_CONFIG_HOME"
@@ -13,7 +15,7 @@ namespace fs = std::filesystem;
 int main(int argc, char** argv) {
     int         EXIT_STATUS = EXIT_SUCCESS;
 
-    CLI::App    app{"A simple CLI to-do list"};
+    CLI::App    app{"A simple CLI to-do list", "lunify"};
 
     std::string c_XDG_CONFIG_HOME;
 
@@ -68,6 +70,9 @@ int main(int argc, char** argv) {
 
     auto listTasks = [&todo](int nothing) { todo.listTasks(); };
     app.add_flag("-l,--list", listTasks, "List all tasks");
+
+    auto displayVersion = [](int nothing) { std::println("{}", VERSION); };
+    app.add_flag("-v,--version", displayVersion, "Display the current version of Lunify");
 
     // Save tasks on exit
     app.callback([&todo, &TODO_DB_PATH]() { todo.saveToFile(TODO_DB_PATH); });
