@@ -9,22 +9,23 @@ Quickly manage your tasks from the terminal!
 ---
 
 # Installation Instructions
-Download the package from release\
-Make it executable and move it to a valid path:
+Download the package from release.\
+Then make it executable and move it to a valid path:
 ```bash
 chmod +x lunify
-sudo mv lunify /usr/bin
+sudo mv lunify /usr/local/bin
 ```
+**Note**: You don't have to move it to /usr/local/bin (although it's recommended), just a valid exported path.
 ## Build locally
 ```bash
 git clone https://github.com/rexept/lunify
 cd lunify
 mkdir build
+cd build
 cmake -DCMAKE_BUILD_TYPE=Release .. 
-chmod +x lunify
-sudo mv lunify /usr/bin
+make
+make install
 ```
-**Note**: You don't have to move it to /usr/bin, just a valid exported path.
 
 # Build Instructions (for development)
 Clone the package:
@@ -35,6 +36,7 @@ Make build directory:
 ```bash
 cd lunify
 mkdir build
+cd build
 ```
 Initialize CMake
 ```bash
