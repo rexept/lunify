@@ -91,5 +91,10 @@ int main(int argc, char** argv) {
     app.callback([&todo, &TODO_DB_PATH]() { todo.saveToFile(TODO_DB_PATH); });
 
     CLI11_PARSE(app, argc, argv);
+
+    if (argc == 1) {
+        std::println("{}", app.help());
+    }
+
     return EXIT_STATUS;
 }
