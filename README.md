@@ -53,6 +53,6 @@ Initialize CMake
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .. 
 ```
-
+---
 
 Special thanks to [termshot](https://github.com/homeport/termshot) for the amazing screenshots
