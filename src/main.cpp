@@ -6,7 +6,7 @@
 #include <filesystem>
 #include "todo.h"
 
-#define VERSION "v1.0.0-dev"
+#define VERSION "v1.1.0"
 
 namespace fs = std::filesystem;
 
