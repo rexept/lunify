@@ -21,6 +21,8 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall")
 endif()
 
+install(TARGETS lunify DESTINATION /usr/local/bin)
+
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 23)
 

@@ -17,22 +17,32 @@ sudo mv lunify /usr/local/bin
 ```
 **Note**: You don't have to move it to /usr/local/bin (although it's recommended), just a valid exported path.
 ## Build locally
+Clone the repo:
 ```bash
 git clone https://github.com/rexept/lunify
+```
+Make the build directory:
+```bash
 cd lunify
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release .. 
+```
+Initialize and run CMake:
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release ..
 make
-make install
+```
+Install globally (requires sudo):
+```bash
+sudo make install
 ```
 
 # Build Instructions (for development)
-Clone the package:
+Clone the repo:
 ```bash
 git clone https://github.com/rexept/lunify
 ```
-Make build directory:
+Make the build directory:
 ```bash
 cd lunify
 mkdir build
