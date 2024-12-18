@@ -19,11 +19,12 @@ class Todo {
     void completeTask(const size_t index);
     void revokeCompletion(const size_t index);
     void deleteTask(const size_t index);
+    void clearTasks();
     void listTasks() const;
     void saveToFile(const std::string& filename);
 
   private:
-    std::vector<Task> tasks;
+    std::vector<Task> m_tasks;
 };
 
 #endif // TODO_H
