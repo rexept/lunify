@@ -5,7 +5,7 @@ file(GLOB SOURCES
 cmake_minimum_required(VERSION 3.5)
 
 # Set the project name and version
-project(lunify VERSION 1.0.0 LANGUAGES CXX)
+project(lunify VERSION 1.1.0 LANGUAGES CXX)
 
 # Add the executable target
 add_executable(lunify ${SOURCES})
