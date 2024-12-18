@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     std::string c_XDG_CONFIG_HOME;
 
     if (!getenv(XDG_CONFIG_HOME)) {
-        std::cerr << "Are you on Linux?\n ERROR: $XDG_CONFIG_HOME not found.";
+        std::cerr << "Are you on Linux?\nERROR: $XDG_CONFIG_HOME not found.";
         return EXIT_FAILURE;
     }
 
