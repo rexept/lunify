@@ -1,5 +1,4 @@
-#ifndef TODO_H
-#define TODO_H
+#pragma once
 
 #include <string>
 #include <vector>
@@ -26,5 +25,3 @@ class Todo {
   private:
     std::vector<Task> m_tasks;
 };
-
-#endif // TODO_H
