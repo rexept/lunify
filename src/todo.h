@@ -16,6 +16,7 @@ class Todo {
 
     void addTask(const std::string& description);
     void completeTask(const size_t index);
+    void completeTasks(const std::vector<size_t> indices);
     void revokeCompletion(const size_t index);
     void deleteTask(const size_t index);
     void clearTasks();

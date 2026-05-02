@@ -13,6 +13,14 @@ void Todo::completeTask(const size_t index) {
     }
 }
 
+void Todo::completeTasks(const std::vector<size_t> indices) {
+    for (const auto& i : indices) {
+        if (i < m_tasks.size()) {
+            m_tasks[i].completed = true;
+        }
+    }
+}
+
 void Todo::revokeCompletion(const size_t index) {
     if (index < m_tasks.size()) {
         m_tasks[index].completed = false;
